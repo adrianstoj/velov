@@ -1,0 +1,197 @@
+/* Header et navigation */
+header {
+    height: 11%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 1px 1px;
+    position: fixed;
+    z-index: 500;
+    margin: 0;
+}
+
+#logo_velo {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    transform: scale(0.75)
+}
+
+#logo_lyon {
+    width: 200px;
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+    transform: scale(0.8);
+}
+
+#menu {
+    width: 50%;
+}
+
+#menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#menu li {
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+#menu li:hover {
+    font-weight: 500; 
+}
+
+.li_active {
+   background-color: #ff6666; 
+}
+
+/* Slider */
+
+#header_slider {
+    height: 100px;
+}
+
+#slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#slider:target {
+    padding-top: 7em; 
+    margin-top: -7em;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+}
+
+#titre_slide h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    color: #ff6666;
+}
+
+#titre_slide p {
+    font-size: 30px;
+    text-align: center;
+    color: #ff6666;
+    margin-top: -17px;
+}
+
+#slider li {
+    display: flex;
+    justify-content: center;
+}
+
+#container_slider {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+#slider img {
+    width: 1000px;
+}
+
+#slider ul {
+    list-style-type: none;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+#slider li p {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    background: rgba(0,0,0,.4);
+}
+
+.slide p {
+    text-align: center;
+}
+
+#control_prev {
+    position: absolute;
+    top: 55%;
+    width: 200px;
+    left: 7%;
+}
+
+#control_next {
+    position: absolute;
+    top: 55%;
+    width: 200px;
+    right: 3.5%;
+}
+
+/* Map */
+#appli {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+#appli:target {
+    padding-top: 5em; 
+    margin-top: -5em;
+}
+
+ #map {
+    width: 35%;
+    height: 500px;
+    flex: 10;
+    margin-right: 30px;
+    margin-left: 80px;
+    margin-bottom: 5px;
+ }
+
+/* Réservation */
+
+#reservation {
+    flex: 3;
+}
+
+#reservation_2 {
+    flex: 3;
+    display: none;
+}
+
+span {
+    font-weight: 600;
+}
+
+#canvas {
+    border: 1px solid black;
+}
+
+#resaImpossible {
+    display: none;
+}
+
+/* Footer */
+
+footer {
+    height: 100px;
+    margin-top: 30px;
+}
+
+#footer_resa {
+    display: none;
+}
+

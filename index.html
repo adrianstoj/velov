@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vélo'v. Retrouvez le service de location de vélos dans la métropole de Lyon.">
+    <title>Vélo'v - profitez de la ville à vélo</title>
+    <link rel="stylesheet" href="./css/knacss.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <a href="./index.html"><img src="images/velov_logo.jpg" alt="Logo Velo'v" id="logo_velo"></a>
+        <nav id="menu">
+            <ul>
+               <li class="li_active" id="liAccueil"><a href="./index.html">Accueil</a></li>
+                <li class="li_menu" id="liAppli"><a href="#appli">Accéder à la carte de location</a></li>
+            </ul>
+        </nav>
+        <img src="images/grandlyon_log.jpg" alt="Logo Métropole Lyon" id="logo_lyon">
+    </header>
+    
+    <div id="header_slider"></div>
+    
+    <div id="slider">
+       <div id="titre_slide">
+            <h1>
+                Adoptez le véhicule le plus écologique et économique de la métropole de Lyon
+            </h1>
+            <p>
+                Suivez le guide :
+            </p>
+        </div>
+        
+        <div id="container_slider">
+            <ul>
+                <li class="slide" id="slide1">
+                    <img src="./images/velov_1.jpg" alt="Photo slider femme qui prend un vélo">
+                    <p> 
+                        Bienvenue sur le site Vélo'v
+                    <br> 
+                        Un guide animé sous forme de diaporama est à votre disposition pour vous expliquer le fonctionnement
+                    </p>
+                </li>
+                <li class="slide" id="slide2">
+                    <img src="./images/velov_2.png" alt="Réservation de vélo sur l'application">
+                    <p>
+                        Où souhaitez-vous louer votre vélo? Zoomez la carte afin de localiser la station de votre choix
+                    </p>
+                </li>
+                <li class="slide" id="slide3">
+                    <img src="./images/velov_3.png" alt="Photo de la carte de l'application">
+                    <p>
+                        Une fois votre station trouvée vous pouvez savoir si elle est disponible en consultant sa couleur (voir légende en dessous de la carte) cliquez dessus pour obtenir plus d'informations
+                    </p>
+                </li>
+                <li class="slide" id="slide4">
+                    <img src="./images/velov_4.png" alt="Photo de la carte de l'application">
+                    <p>
+                        Si la position de la station vous convient confirmez la réservation à l'aide du bouton, indiquez vos informations et signez
+                    </p>
+                </li>
+                <li class="slide" id="slide5">
+                   <img src="images/velov_7.jpg" alt="Photo d'un homme qui roule en vélo">
+                    <p>
+                        Récuperez votre vélo dans les vingt minutes suivant votre réservation et roulez :)
+                    </p>
+                </li>
+            </ul>
+        </div>
+            <i class="fas fa-arrow-left fa-3x" id="control_prev"></i>
+            <i class="fas fa-arrow-right fa-3x" id="control_next"></i>
+    </div>
+    
+    <section id="appli">
+        <div id="map"></div> 
+        <div id="reservation">
+           <table>
+               <tr>
+                   <th>Réservation</th>
+               </tr>
+               <tr>
+                   <td>Nom de la station : <span id="nomStation"></span></td>
+               </tr>
+               <tr>
+                   <td>Adresse de la station : <span id="adresseStation"></span></td>
+               </tr>
+               <tr>
+                   <td>Etat de la station : <span id="etatStation"></span></td>
+               </tr>
+               <tr>
+                   <td>Nombre de places : <span id="placesStation"></span></td>
+               </tr>
+               <tr>
+                   <td>Nombre de vélos restants : <span id="restantsStation"></span></td>
+               </tr>
+            </table> 
+            <button id="resa">Réserver un vélo</button>
+            <button id="resaImpossible">Réservation impossible</button>
+        </div>
+        
+        <div id="reservation_2">
+                Confirmez votre réservation à la station  <span id="nomStationResa"></span> en renseignant vos coordonnées
+               <form method="post" onsubmit="return validerForm(this);">
+                    <p>
+                    <label>Entrez votre nom</label> :
+                    <input type="text" name="nom" id="nomForm" required>
+                </p>
+                <p>
+                    <label>Entrez votre prénom</label> :
+                    <input type="text" name="prénom" id="prénomForm" required>
+                </p>
+                <div id="container_canvas">
+                    <p>Signature :</p>
+                <canvas id="canvas" width="250" height="200">Désolé votre navigateur ne supporte pas canvas :( Vous avez tout de même la possibilité de valider votre réservation.</canvas>
+                </div>
+                <input type="submit" value="Envoyer" id="envoi">
+                <input type="reset" value="Annuler">
+                </form>
+        </div>
+    </section>
+    <div id="info_mark">
+        <p>
+            <img src="./images/cycling.png" alt="Marqueur station ouverte">: Indique une station ouverte. La réservation de vélo est possible.<br>
+        </p>
+        <p>
+            <img src="./images/cycling3.png" alt="Marqueur station vide">: Indique une station qui ne comporte pas de vélos disponible. La réservation n'est pas possible pour le moment.
+        </p>
+        <p>
+            <img src="./images/cycling2.png" alt="Marqueur station fermée">: Indique une station fermée. La réservation n'est pas possible.
+        </p>
+    </div>
+    
+    <footer>
+        <div id="footer_defaut"><p>Vous n'avez aucune réservation pour le moment</p></div>
+        <div id="footer_resa"><p>Vous avez une réservation à la station <span id="nomFooter"></span><br>Cette reservation est valable pour <span id="minutesTimer"></span> minutes et <span id="secondesTimer"></span> secondes</p></div>
+    </footer>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/markerclusterer.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/stationmarker.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtml_OWjKNk-0eanrGTX13Q-JKl5PKYIw&callback=initMap">
+    </script>
+    <script src="./js/station.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/timer.js"></script>
+    <script src="./js/footer.js"></script>
+    
+</body>
+</html>
