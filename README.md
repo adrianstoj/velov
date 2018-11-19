@@ -1,0 +1,1 @@
+Site web réalisé dans le cadre de la formation "Développeur intégrateur en réalisation d’applications web" de l'école en ligne OpenClassrooms. La finalité de ce projet était la réalisation d'une application de réservation de vélo dans la ville de Lyon. Elle devait être developée uniquement côté client en JavaScript. Lien du site hébergé : http://velov.stoj.fr
