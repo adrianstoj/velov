@@ -91,11 +91,6 @@ header {
     margin-top: -17px;
 }
 
-#slider li {
-    display: flex;
-    justify-content: center;
-}
-
 #container_slider {
     display: flex;
     justify-content: center;
@@ -128,16 +123,16 @@ header {
 
 #control_prev {
     position: absolute;
-    top: 55%;
+    top: 45%;
     width: 200px;
-    left: 7%;
+    left: 15%;
 }
 
 #control_next {
     position: absolute;
-    top: 55%;
+    top: 45%;
     width: 200px;
-    right: 3.5%;
+    left: 74%;
 }
 
 /* Map */
