@@ -1,12 +1,12 @@
 // MAP
 // Création de l'objet contenant les paramètres
-var mapOptions = {
+const mapOptions = {
     center: {lat: 45.758114, lng: 4.832501},
     zoom: 13,
 };
 
 // Variable cible dans le dom pour placer la map
-var targetDOM = document.getElementById("map");
+const targetDOM = document.getElementById("map");
 
 // Initialisation de la map
 function initMap() {
@@ -14,7 +14,7 @@ function initMap() {
 };
 
 // Création et initialisation de l'objet stationMarker (+ ajout de la personnalisation de l'icone)
-var stationMarker = { 
+const stationMarker = {
     icon: "",
     
     initMarker: function (positionMarker) {

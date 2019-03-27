@@ -3,9 +3,9 @@
 
 
 // Paramètres de la signature 
-var drawingSignature = false;
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
+let drawingSignature = false;
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
 context.lineWidth = 4;
 canvas.style.cursor = "pointer";
 
@@ -18,7 +18,7 @@ window.onload = function mooveMouse() {
 };
 
 // L'objet où on récupère les différentes méthodes de la signature
-var Signature = {
+const Signature = {
     beginSignature: function(event) {
         drawingSignature = true;
         context.beginPath();

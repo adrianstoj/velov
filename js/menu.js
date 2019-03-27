@@ -1,26 +1,28 @@
 // Création de l'élement actif qui récupère la couleur via al position
 window.menu = function() {
-    var liAccueil = document.getElementById("liAccueil");
-    var liAppli = document.getElementById("liAppli");
+    const liAccueil = document.getElementById("liAccueil");
+    const liAppli = document.getElementById("liAppli");
+
+    const domAccueil = document.getElementById("header_slider");
+    const domAppli = document.getElementById("map");
+
+    const posAccueil = domAccueil.offsetHeight + domAccueil.offsetTop;
+    const posAppli = domAppli.offsetHeight + domAppli.offsetTop;
+    const pos = window.scrollY;
     
-    var domAccueil = document.getElementById("header_slider");
-    var domAppli = document.getElementById("map");
-    
-    var posAccueil = domAccueil.offsetHeight + domAccueil.offsetTop;
-    var posAppli = domAppli.offsetHeight + domAppli.offsetTop;
-    var pos = window.scrollY;
-    
-    if (pos < posAccueil){   
+    if (pos < posAccueil) {
         liAccueil.style.background = "#ff6666";
     } 
-    else
-		liAccueil.style.background = "inherit";
+    else {
+        liAccueil.style.background = "inherit";
+    }
     
-    if (pos > posAccueil && pos < posAppli){   
+    if (pos > posAccueil && pos < posAppli) {
         liAppli.style.background = "#ff6666";
     } 
-    else
-		liAppli.style.background = "inherit";
+    else {
+        liAppli.style.background = "inherit";
+    }
 }
 
- window.addEventListener("scroll", menu);
+window.addEventListener("scroll", menu);

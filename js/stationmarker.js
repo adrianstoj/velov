@@ -1,6 +1,6 @@
-var marker;
+let marker;
 // Création et initialisation de l'objet stationMarker (+ ajout de la personnalisation de l'icone)
-var stationMarker = { 
+const stationMarker = {
     icon: "",
     
     initMarker: function (positionMarker) {

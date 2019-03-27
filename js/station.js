@@ -1,5 +1,5 @@
 // Création de l'objet Station
-var Station = {
+const Station = {
     nom: "",
     adresse: "",
     etat: "",
@@ -12,7 +12,7 @@ var Station = {
     req = new XMLHttpRequest();
     req.open("GET", url);
     req.addEventListener("load", function () {
-        if (req.status >= 200 && req.status < 400) { // Le serveur a réussi à traiter la requête
+        if (req.DONE && req.status >= 200 && req.status < 400) { // Le serveur a réussi à traiter la requête
             callback(req.responseText);
         } else {
             // Affichage des informations sur l'échec du traitement de la requête
@@ -47,7 +47,7 @@ var Station = {
     
     // Enregistrement des données pour le footer
     saveData: function() {
-        var now = new Date();
+        const now = new Date();
         sessionStorage.setItem("nomStorage", this.nom);
         sessionStorage.setItem("hStorage", now.getHours());
         sessionStorage.setItem("minStorage", now.getMinutes());
@@ -55,7 +55,7 @@ var Station = {
     },
     
     regroupMarker: function () {
-        var markerCluster = new MarkerClusterer(map, this.tabMarker, {imagePath: "images/marqueurs/m"});
+        const markerCluster = new MarkerClusterer(map, this.tabMarker, {imagePath: "images/marqueurs/m"});
     },
 };
 
@@ -71,7 +71,7 @@ Station.ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=e
             Station.addData();
             
             Station.saveData();
-            var dataFooter = sessionStorage.getItem("nomStorage");
+            const dataFooter = sessionStorage.getItem("nomStorage");
              
             document.getElementById("envoi").addEventListener("click", function(e) {
                 document.getElementById("nomFooter").innerHTML = dataFooter;

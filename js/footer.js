@@ -1,14 +1,14 @@
 // Objet avec calcul du temps passé au rafraichissement de la page
-var storageTime = {
+const storageTime = {
     heures: "",
     minutes: "",
     secondes: "",  
 }
 
 // Initialisation de la variable pour récupérer l'heure
-var now = new Date();
+const now = new Date();
 
-var resaTime = {
+const resaTime = {
     heures: "",
     minutes: "",
     secondes: "",
@@ -24,12 +24,12 @@ var resaTime = {
 }; 
 
 // Heure de réservation
-var resaHeures = sessionStorage.getItem("hStorage");
-var resaMin = sessionStorage.getItem("minStorage");
-var resaSec = sessionStorage.getItem("secStorage");
+const resaHeures = sessionStorage.getItem("hStorage");
+const resaMin = sessionStorage.getItem("minStorage");
+const resaSec = sessionStorage.getItem("secStorage");
 
 // Initialisation des blocs lors d'un refresh si le stockage de session comprend un nom de station
-var checkNom = sessionStorage.getItem("nomStorage");
+const checkNom = sessionStorage.getItem("nomStorage");
 if (sessionStorage.getItem("nomStorage")) {
         document.getElementById("footer_defaut").style.display = "none";
         document.getElementById("footer_resa").style.display = "block";
@@ -41,9 +41,9 @@ if (sessionStorage.getItem("nomStorage")) {
 }
 
 // Heure actuelle
-var currentHeures = sessionStorage.getItem("nowHStorage");
-var currentMin = sessionStorage.getItem("nowMinStorage");
-var currentSec = sessionStorage.getItem("nowSecStorage");
+const currentHeures = sessionStorage.getItem("nowHStorage");
+const currentMin = sessionStorage.getItem("nowMinStorage");
+const currentSec = sessionStorage.getItem("nowSecStorage");
 
 storageTime.secondes = currentSec - resaSec;
 storageTime.minutes = currentMin - resaMin;
